@@ -3,94 +3,110 @@
 #include "pch.h"
 #include <iostream>
 
-
 int main()
 {
-	double bill = 0;
-
-	std::cout << "What's the bill amount?\n";
-
-	std::cin >> bill;
-
-	double given;
-
-	std::cout << "How much cash did the customer give?\n";
-
-	std::cin >> given;
-
-	if (given > bill)
+	while (true)
 	{
-		double totalChange = given - bill;
+		double bill = 0;
 
-		double remainingChange = totalChange;
+		std::cout << "\nWhat's the bill amount?\n";
 
-		int hundreds = remainingChange / 100;
+		std::cin >> bill;
 
-		remainingChange = remainingChange - (hundreds * 100);
+		double given;
 
-		int fifties = remainingChange / 50;
+		std::cout << "\nHow much cash did the customer give?\n";
 
-		remainingChange = remainingChange - (fifties * 50);
+		std::cin >> given;
 
-		int twenties = remainingChange / 20;
+		if (given < bill)
+		{
+			double owed = bill - given;
 
-		remainingChange = remainingChange - (twenties * 20);
+			std::cout << "\nCustomer owes $" << owed << "\n\n";
+		}
+		else
+		{
+			double totalChange = given - bill;
 
-		int tens = remainingChange / 10;
+			double remainingChange = totalChange;
 
-		remainingChange = remainingChange - (tens * 10);
+			int hundreds = remainingChange / 100;
 
-		int fives = remainingChange / 5;
+			remainingChange = remainingChange - (hundreds * 100);
 
-		remainingChange = remainingChange - (fives * 5);
+			int fifties = remainingChange / 50;
 
-		int ones = remainingChange / 1;
+			remainingChange = remainingChange - (fifties * 50);
 
-		remainingChange = remainingChange - (ones * 1);
+			int twenties = remainingChange / 20;
 
-		int quarters = remainingChange / 0.25;
+			remainingChange = remainingChange - (twenties * 20);
 
-		remainingChange = remainingChange - (quarters * 0.25);
+			int tens = remainingChange / 10;
 
-		int dimes = remainingChange / 0.10;
+			remainingChange = remainingChange - (tens * 10);
 
-		remainingChange = remainingChange - (dimes * 0.10);
+			int fives = remainingChange / 5;
 
-		int nickels = remainingChange / 0.05;
+			remainingChange = remainingChange - (fives * 5);
 
-		remainingChange = remainingChange - (nickels * 0.05);
+			int ones = remainingChange / 1;
 
-		int pennies = remainingChange / 0.01;
+			remainingChange = remainingChange - (ones * 1);
 
-		std::cout << "\n\nChange: $" << totalChange << "\n";
+			int quarters = remainingChange / 0.25;
 
-		std::cout << "------------------------------\n";
+			remainingChange = remainingChange - (quarters * 0.25);
 
-		std::cout << "\t" << hundreds << " hundred-dollar bills\n";
+			int dimes = remainingChange / 0.10;
 
-		std::cout << "\t" << fifties << " fifty-dollar bills\n";
+			remainingChange = remainingChange - (dimes * 0.10);
 
-		std::cout << "\t" << twenties << " twenty-dollar bills\n";
+			int nickels = remainingChange / 0.05;
 
-		std::cout << "\t" << tens << " ten-dollar bills\n";
+			remainingChange = remainingChange - (nickels * 0.05);
 
-		std::cout << "\t" << fives << " five-dollar bills\n";
+			int pennies = remainingChange / 0.01;
 
-		std::cout << "\t" << ones << " one-dollar bills\n";
+			remainingChange = remainingChange - (pennies * 0.01);
 
-		std::cout << "\t" << quarters << " quarters\n";
+			while (remainingChange > 0)
+			{
+				if (remainingChange >= 0.005)
+				{
+					pennies++;
+				}
 
-		std::cout << "\t" << dimes << " dimes\n";
+				remainingChange -= 0.01;
+			}
 
-		std::cout << "\t" << nickels << " nickels\n";
+			std::cout << "\n\nChange: $" << totalChange << "\n";
 
-		std::cout << "\t" << pennies << " pennies\n";
-	}
-	else
-	{
-		double owed = bill - given;
+			std::cout << "------------------------------\n";
 
-		std::cout << "Customer owes $" << owed << "\n";
+			std::cout << "\t" << hundreds << " hundred-dollar bills\n";
+
+			std::cout << "\t" << fifties << " fifty-dollar bills\n";
+
+			std::cout << "\t" << twenties << " twenty-dollar bills\n";
+
+			std::cout << "\t" << tens << " ten-dollar bills\n";
+
+			std::cout << "\t" << fives << " five-dollar bills\n";
+
+			std::cout << "\t" << ones << " one-dollar bills\n";
+
+			std::cout << "\t" << quarters << " quarters\n";
+
+			std::cout << "\t" << dimes << " dimes\n";
+
+			std::cout << "\t" << nickels << " nickels\n";
+
+			std::cout << "\t" << pennies << " pennies\n\n";
+		}
+
+		system("pause");
 	}
 
 	return 0;

@@ -85,25 +85,145 @@ int main()
 
 			std::cout << "------------------------------\n";
 
-			std::cout << "\t" << hundreds << " hundred-dollar bills\n";
+			if (hundreds > 0)
+			{
+				std::cout << "\t" << hundreds << " hundred-dollar bill";
 
-			std::cout << "\t" << fifties << " fifty-dollar bills\n";
+				if (hundreds > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
 
-			std::cout << "\t" << twenties << " twenty-dollar bills\n";
+			if (fifties > 0)
+			{
+				std::cout << "\t" << fifties << " fifty-dollar bill";
 
-			std::cout << "\t" << tens << " ten-dollar bills\n";
+				if (fifties > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
 
-			std::cout << "\t" << fives << " five-dollar bills\n";
+			if (twenties > 0)
+			{
+				std::cout << "\t" << twenties << " twenty-dollar bill";
 
-			std::cout << "\t" << ones << " one-dollar bills\n";
+				if (twenties > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
 
-			std::cout << "\t" << quarters << " quarters\n";
+			if (tens > 0)
+			{
+				std::cout << "\t" << tens << " ten-dollar bill";
 
-			std::cout << "\t" << dimes << " dimes\n";
+				if (tens > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
 
-			std::cout << "\t" << nickels << " nickels\n";
+			if (fives > 0)
+			{
+				std::cout << "\t" << fives << " five-dollar bill";
 
-			std::cout << "\t" << pennies << " pennies\n\n";
+				if (fives > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
+
+			if (ones > 0)
+			{
+				std::cout << "\t" << ones << " one-dollar bill";
+
+				if (ones > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
+
+			if (quarters > 0)
+			{
+				std::cout << "\t" << quarters << " quarter";
+
+				if (quarters > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
+
+			if (dimes > 0)
+			{
+				std::cout << "\t" << dimes << " dime";
+
+				if (dimes > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
+
+			if (nickels > 0)
+			{
+				std::cout << "\t" << nickels << " nickel";
+
+				if (nickels > 1)
+				{
+					std::cout << "s\n";
+				}
+				else
+				{
+					std::cout << "\n";
+				}
+			}
+
+			if (pennies > 0)
+			{
+				std::cout << "\t" << pennies << " penn";
+
+				if (pennies > 1)
+				{
+					std::cout << "ies\n\n";
+				}
+				else
+				{
+					std::cout << "y\n\n";
+				}
+			}
 		}
 
 		system("pause");
